@@ -11,22 +11,24 @@ const App = () => {
   ]);
   return (
     <div className="container">
-      <input
-        type="text"
-        value={title}
-        onChange={(event) => {
-          setTitle(event.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          setTodos([...todos, { id: todos.length + 1, title: title }]);
-        }}
-      >
-        추가하기
-      </button>
+      <header className="hd">
+        <input
+          type="text"
+          value={title}
+          onChange={(event) => {
+            setTitle(event.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            setTodos([...todos, { id: todos.length + 1, title: title }]);
+          }}
+        >
+          추가하기
+        </button>
+      </header>
 
-      <h1>Todo list</h1>
+      <h1 className="h1">Todo list</h1>
       <div className="todos-container">
         {todos.map((todo) => (
           <div className="todo" key={todo.id}>
